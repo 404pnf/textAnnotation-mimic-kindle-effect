@@ -8,7 +8,7 @@
 
     // highlight selected text range
     $('#yuedu').mouseup(function(e) {
-        document.getSelection();
+        rangy.getSelection();
         rangy.createCssClassApplier('annotation').applyToSelection(); // 默认将选中内容用span裹起来
     });
 
