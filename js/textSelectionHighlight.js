@@ -1,0 +1,25 @@
+
+// usage:
+// 1. mouse select text range to highlight
+// 2. click on highlighted range to remove highlight
+//
+(function () {
+    // rangy.init(); // init() by default?
+
+    // highlight selected text range
+    $('#yuedu').mouseup(function(e) {
+        document.getSelection();
+        rangy.createCssClassApplier('annotation').applyToSelection(); // 默认将选中内容用span裹起来
+    });
+
+    // remove hightlight
+    $('#yuedu').delegate("span", "click", function (e) {
+        var text = $(this).text();
+        $(this).replaceWith(text);
+    });
+    // prevent nested hightlight
+    $('#yuedu').delegate("span", "mousedown", function (e) {
+        var text = $(this).text();
+        $(this).replaceWith(text);
+    });
+})();
