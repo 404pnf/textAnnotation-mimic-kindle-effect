@@ -13,13 +13,10 @@
     });
 
     // remove hightlight
-    $('#yuedu').delegate("span", "click", function (e) {
-        var text = $(this).text();
-        $(this).replaceWith(text);
-    });
     // prevent nested hightlight
-    $('#yuedu').delegate("span", "mousedown", function (e) {
+    $('#yuedu').delegate("span", "click mousedown", function (e) {
         var text = $(this).text();
         $(this).replaceWith(text);
     });
+
 })();
